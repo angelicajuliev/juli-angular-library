@@ -1,0 +1,28 @@
+:host {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  
+  thead {
+    background-color: #fcfcfd;
+    text-transform: uppercase;
+    
+    .tr {
+      border: 1px solid #e6e9ec;
+      border-right: 0;
+      border-left: 0;
+    }
+  }
+
+  tbody {
+    .tr {
+      border-bottom: 1px solid #e6e9ec;
+    }
+
+  }
+  th, td {
+    padding: 16px 8px;
+  }
+}

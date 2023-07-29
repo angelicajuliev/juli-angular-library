@@ -1,0 +1,36 @@
+<table>
+  <thead>
+    <div role="tr" class="tr">
+      <th *ngFor="let column of columns">
+        {{ column.title }}
+      </th>
+    </div>
+  </thead>
+
+  <tbody>
+    <div role="tr" class="tr" *ngFor="let row of data">
+      <td *ngFor="let column of columns">
+        <ng-container
+            *ngTemplateOutlet="
+              cellTemplates ? cellTemplates : defaultCell;
+              context: {
+                row: row,
+                column: column.key,
+                value: row[column.key]
+              }
+            "
+          ></ng-container>
+      </td>
+    </div>
+  </tbody>
+</table>
+
+
+<ng-template
+    #defaultCell
+    let-row="row"
+    let-column="column"
+    let-value="value"
+  >
+  <span class="value">{{ value }}</span>
+</ng-template>

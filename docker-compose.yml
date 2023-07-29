@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  admin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/table-library
+      - /table-library/node_modules
+      - ${HOME}/.ssh:/home/node/.ssh:ro
+    ports:
+      - 4200:4200
+      - 49153:49153
+    environment:
+    - CHOKIDAR_USEPOLLING=true

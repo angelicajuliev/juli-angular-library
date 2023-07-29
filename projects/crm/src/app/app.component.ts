@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'CRM';
+  public myExampleColumns: any[]
+  public dataTable: any[]
+
+
+  constructor() {
+    this.myExampleColumns = [
+      {
+        key: 'firstValue',
+        title: 'My title',
+      }
+    ]
+
+    this.dataTable = [
+      { firstValue: 'Testing' }
+    ]
+  }
 }
